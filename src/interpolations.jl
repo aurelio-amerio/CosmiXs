@@ -35,17 +35,17 @@ given the energy of final particles `K` and the dark matter mass `mDM`.
 Available `final_particles` are: `AntiProtons`, `Gammas`, `NuEl`, `NuMu`, `NuTau`, `Positrons`.
 
 Available `primary_channel` are: 
--`eL`, `eR`, `e`,
--`muL`, `muR`, `mu`,
--`tauL`, `tauR`, `tau`,
--`nu_e`, `nu_mu`, `nu_tau`,
--`u`, `d`, `s`, `c`, `b`, `t`,
--`a`, `g`,
--`W`, `WL`, `WT`,
--`Z`, `ZL`, `ZT`,
--`H`,
--`aZ`,
--`HZ`
+- `eL`, `eR`, `e`,
+- `muL`, `muR`, `mu`,
+- `tauL`, `tauR`, `tau`,
+- `nu_e`, `nu_mu`, `nu_tau`,
+- `u`, `d`, `s`, `c`, `b`, `t`,
+- `a`, `g`,
+- `W`, `WL`, `WT`,
+- `Z`, `ZL`, `ZT`,
+- `H`,
+- `aZ`,
+- `HZ`
 
 """
 function dNdE(mDM::Energy, K::Energy; final_particles="Gammas", primary_channel="b")
