@@ -14,7 +14,7 @@ end
     itp = get_interp(final_particles, primary_channel)
     function dNdx(mDM_::Energy, x::Real)
         mDM = ustrip(u"GeV", mDM_)
-        @assert 5<=mDM<=5000 "mDM must be between 5 GeV and 5000 GeV"
+        @assert 5<=mDM<=100_000 "mDM must be between 5 GeV and 5000 GeV"
         return itp(log10(x), log10(mDM))
     end
     return dNdx
@@ -24,7 +24,7 @@ end
     itp = get_interp(final_particles, primary_channel)
     function dNdE(mDM::Energy, K::Energy)
         x = K / mDM
-        @assert 5u"GeV"<=mDM<=5000u"GeV" "mDM must be between 5 GeV and 5000 GeV"
+        @assert 5u"GeV"<=mDM<=100_000u"GeV" "mDM must be between 5 GeV and 5000 GeV"
         return 1 / mDM * itp(log10(x), log10(ustrip(u"GeV", mDM)))
     end
     return dNdE
