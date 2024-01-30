@@ -20,6 +20,12 @@ for final_particle in CosmiXs.final_particles
             dNdE_value = data[idx_Log10x, idx_mDM]/(mDM_val)*u"GeV^-1"
             
             @test dNdE(mDM_val*u"GeV", K_val*u"GeV"; final_particles=final_particle, primary_channel=primary_channel) ≈ dNdE_value
+
+            @test dNdE(mDM_val*u"GeV", mDM_val*u"GeV"; final_particles=final_particle, primary_channel=primary_channel) ≈ 0u"GeV^-1"
+            
+            @test dNdE(mDM_val*u"GeV", 2*mDM_val*u"GeV"; final_particles=final_particle, primary_channel=primary_channel) ≈ 0u"GeV^-1"
+
+            @test_throws AssertionError dNdE(1u"GeV", K_val*u"GeV"; final_particles=final_particle, primary_channel=primary_channel)
         end
     end
 end

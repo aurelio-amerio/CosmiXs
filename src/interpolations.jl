@@ -3,7 +3,9 @@ function get_interp(final_particles, primary_channel)
     mDM, Log10x = get_mDM_Log10x(final_particles)
     data_ = read_data(final_particles, primary_channel)
     data = reshape(data_, length(Log10x), length(mDM))
-    itp = linear_interpolation((Log10x, log10.(mDM)), data)
+    # make a linear interpolation, extrapolate in the first dimension with 0 and in the second dimension by throwing an error
+
+    itp = linear_interpolation((Log10x, log10.(mDM)), data, extrapolation_bc = 0)
     return itp
 end
 
@@ -12,6 +14,7 @@ end
     itp = get_interp(final_particles, primary_channel)
     function dNdx(mDM_::Energy, x::Real)
         mDM = ustrip(u"GeV", mDM_)
+        @assert 5<=mDM<=5000 "mDM must be between 5 GeV and 5000 GeV"
         return itp(log10(x), log10(mDM))
     end
     return dNdx
@@ -21,6 +24,7 @@ end
     itp = get_interp(final_particles, primary_channel)
     function dNdE(mDM::Energy, K::Energy)
         x = K / mDM
+        @assert 5u"GeV"<=mDM<=5000u"GeV" "mDM must be between 5 GeV and 5000 GeV"
         return 1 / mDM * itp(log10(x), log10(ustrip(u"GeV", mDM)))
     end
     return dNdE
