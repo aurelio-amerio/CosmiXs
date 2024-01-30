@@ -17,7 +17,7 @@ for final_particle in CosmiXs.final_particles
             x_val = 10^Log10x_val
             K_val = mDM_val*x_val
             
-            dNdE_value = data[idx_Log10x, idx_mDM]/(mDM_val)*u"GeV^-1"
+            dNdE_value = data[idx_Log10x, idx_mDM]/(x_val)/(mDM_val)*u"GeV^-1"
             
             @test dNdE(mDM_val*u"GeV", K_val*u"GeV"; final_particles=final_particle, primary_channel=primary_channel) ≈ dNdE_value
 

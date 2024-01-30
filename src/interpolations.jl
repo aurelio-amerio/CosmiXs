@@ -2,7 +2,7 @@ function get_interp(final_particles, primary_channel)
     # return interpolation for Log10[dN/dLog10(x)]
     mDM, Log10x = get_mDM_Log10x(final_particles)
     data_ = read_data(final_particles, primary_channel)
-    data = reshape(data_, length(Log10x), length(mDM))
+    data = reshape(data_, length(Log10x), length(mDM)) ./ (10 .^ Log10x )# dN/dx
     # make a linear interpolation, extrapolate in the first dimension with 0 and in the second dimension by throwing an error
 
     itp = linear_interpolation((Log10x, log10.(mDM)), data, extrapolation_bc = 0)
