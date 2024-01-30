@@ -6,11 +6,11 @@ DocMeta.setdocmeta!(CosmiXs, :DocTestSetup, :(using CosmiXs); recursive=true)
 makedocs(;
     modules=[CosmiXs],
     authors="Original Authors, and Aurelio Amerio",
-    repo="https://github.com/aurelio-amerio/CosmiXs/blob/{commit}{path}#{line}",
+    repo="https://github.com/aurelio-amerio/CosmiXs.jl/blob/{commit}{path}#{line}",
     sitename="CosmiXs",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://aurelio-amerio.github.io/CosmiXs",
+        canonical="https://aurelio-amerio.github.io/CosmiXs.jl",
         edit_link="main",
         assets=String[],
     ),
@@ -20,6 +20,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/aurelio-amerio/CosmiXs",
+    repo="github.com/aurelio-amerio/CosmiXs.jl",
     devbranch="main",
 )

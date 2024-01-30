@@ -1,10 +1,10 @@
 ![alt text](http://github.com/ajueid/DMSpectra/blob/main/img/Logo.png?raw=true)
 
 # CosmiXs: Cosmic messenger spectra for indirect dark matter searches 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://aurelio-amerio.github.io/CosmiXs/stable/)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://aurelio-amerio.github.io/CosmiXs/dev/)
-[![Build Status](https://github.com/aurelio-amerio/CosmiXs/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/aurelio-amerio/CosmiXs/actions/workflows/CI.yml?query=branch%3Amain)
-[![Coverage](https://codecov.io/gh/aurelio-amerio/CosmiXs/branch/main/graph/badge.svg)](https://codecov.io/gh/aurelio-amerio/CosmiXs)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://aurelio-amerio.github.io/CosmiXs.jl/stable/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://aurelio-amerio.github.io/CosmiXs.jl/dev/)
+[![Build Status](https://github.com/aurelio-amerio/CosmiXs.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/aurelio-amerio/CosmiXs.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Coverage](https://codecov.io/gh/aurelio-amerio/CosmiXs.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/aurelio-amerio/CosmiXs.jl)
 
 Julia implementation for https://arxiv.org/abs/2312.01153 derived from https://github.com/ajueid/CosmiXs. All credits go to the original authors.
 
@@ -12,7 +12,7 @@ Julia implementation for https://arxiv.org/abs/2312.01153 derived from https://g
 
 ```julia
 using Pkg
-Pkg.add("https://github.com/aurelio-amerio/CosmiXs.git")
+Pkg.add("https://github.com/aurelio-amerio/CosmiXs.jl.git")
 ```
 
 ## Usage

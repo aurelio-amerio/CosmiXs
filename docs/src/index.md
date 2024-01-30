@@ -4,7 +4,7 @@ CurrentModule = CosmiXs
 
 # CosmiXs
 
-Documentation for [CosmiXs](https://github.com/aurelio-amerio/CosmiXs).
+Documentation for [CosmiXs](https://github.com/aurelio-amerio/CosmiXs.jl).
 
 ```@index
 ```
